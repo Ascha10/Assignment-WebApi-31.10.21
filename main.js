@@ -40,9 +40,11 @@ let searchBtn = document.getElementById("searchBtn");
 let searchInput = document.getElementById("searchInput");
 
 searchBtn.addEventListener("click",() =>{
-getApi(url + searchInput.value)
-.then(res => loopAllItems(res.results))
- .catch(err => console.log(err))
-  .finally(() => {hideLoader()})
+ containerInfo.innerHTML = " ";
+
+ getApi(url + searchInput.value)
+ .then(res => loopAllItems(res.results))
+  .catch(err => console.log(err))
+   .finally(() => {hideLoader()})
 })
 
